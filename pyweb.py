@@ -1,7 +1,7 @@
 import os,shutil
 
 
-def page(folder="templates",page="index.html", title="Pyweb Site",background="False",background_linear_gradient="False",font_page="sans-serif",charset="UTF-8",lang="en",content="IE=edge",page_center="False"):
+def page(folder="templates",page="index.html", title="Pyweb Site",background=False,background_linear_gradient=False,font_page="sans-serif",charset="UTF-8",lang="en",content="IE=edge",page_center=False):
     try:
         shutil.rmtree(folder)
     except:
@@ -29,7 +29,7 @@ def page(folder="templates",page="index.html", title="Pyweb Site",background="Fa
 
 
     #Set Page On center
-    if page_center!="False":
+    if page_center!=False:
         page_center=("""
     display: flex;
     align-items: center;
@@ -47,11 +47,11 @@ def page(folder="templates",page="index.html", title="Pyweb Site",background="Fa
 
     #Set Background
     bcgcode_bb=("")
-    if background!="False":
+    if background!=False:
         bcgcode_bb=("""background-color: """+background+""";""")
     
     bcgcode_gg=("")
-    if background_linear_gradient!="False":
+    if background_linear_gradient!=False:
         bcgcode_gg=("""background: linear-gradient("""+background_linear_gradient+""");""")
 
 
@@ -163,9 +163,9 @@ class JS:
 
 
     class cookie:
-        def new(data,page="main.js",var="False"):
+        def new(data,page="main.js",var=False):
             __js=open(page,"a+")
-            if var=="False":
+            if var==False:
                 code=(f'''document.cookie = "{data}"; ''')
             else:
                 code=(f'''document.cookie = {data}; ''')
@@ -178,9 +178,9 @@ class JS:
 
 
     class request:
-        def new(varname,url,page="main.js",var="False"):
+        def new(varname,url,page="main.js",var=False):
             __js=open(page,"a+")
-            if var=="False":
+            if var==False:
                 code=('''
 var request = new XMLHttpRequest();
 request.open('GET', "'''+str(url)+'''", true);
@@ -208,9 +208,9 @@ request.send();
 
 
 
-    def sava_var(varname,data,page="main.js",var="False"):
+    def sava_var(varname,data,page="main.js",var=False):
         __js=open(page,"a+")
-        if var=="False":
+        if var==False:
             code=(f'''var {varname} = "{data}";''')
         else:
             code=(f'''var {varname} = {data};''')
@@ -254,9 +254,9 @@ function '''+function_name+'''() {
         __js.close()
 
 
-    def alert(text,var="False",page="main.js"):
+    def alert(text,var=False,page="main.js"):
         __js=open(page,"a+")
-        if var=="False":
+        if var==False:
             code=(f'''alert("{text}");''')
         else:
             code=(f'''alert({text});''')
@@ -264,9 +264,9 @@ function '''+function_name+'''() {
         __js.close()
 
 
-    def write_on_page(text,var="False",page="main.js"):
+    def write_on_page(text,var=False,page="main.js"):
         __js=open(page,"a+")
-        if var=="False":
+        if var==False:
             code=(f'''document.write("{text}");''')
         else:
             code=(f'''document.write({text});''')
@@ -274,9 +274,9 @@ function '''+function_name+'''() {
         __js.close()
 
 
-    def console(text,page="main.js",type="log",var="False"):
+    def console(text,page="main.js",type="log",var=False):
         __js=open(page,"a+")
-        if var=="False":
+        if var==False:
             code=(f'''console.{type}("{text}");''')
         else:
             code=(f'''console.{type}({text});''')
@@ -293,7 +293,7 @@ function '''+function_name+'''() {
         __js.close()
 
 
-    def open_url(url,page="main.js",var="False",type="onwindow",width="400",height="300"):
+    def open_url(url,page="main.js",var=False,type="onwindow",width="400",height="300"):
         __js=open(page,"a+")
         if type=="newwindow":
             if var=="False":
@@ -301,7 +301,7 @@ function '''+function_name+'''() {
             else:
                 code=(f'''window.open({url},"","toolbar=no, width={width},height={height},directories=no,menubar=no,scrollbars=no");''')
         else:
-            if var=="False":
+            if var==False:
                 code=(f'''window.open("{url}");''')
             else:
                 code=(f'''window.open({url});''')
@@ -317,7 +317,7 @@ function '''+function_name+'''() {
 
 
 
-def run(browers="False",page="index.html",js_file="main.js", host='0.0.0.0',home_file="index.html",port="8080",varname='app',flask_code=""):
+def run(browers=False,page="index.html",js_file="main.js", host='0.0.0.0',home_file="index.html",port="8080",varname='app',flask_code=""):
     __html=open(page,"a+")
     __html.write(f"""
     <script src="{js_file}"></script>
@@ -325,7 +325,7 @@ def run(browers="False",page="index.html",js_file="main.js", host='0.0.0.0',home
 </html>
 """)
     __html.close()
-    if browers!="False":
+    if browers==True:
         os.startfile("index.html")
     else:
         from flask import Flask, render_template
