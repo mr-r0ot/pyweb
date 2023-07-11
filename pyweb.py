@@ -1,31 +1,6 @@
 import os,shutil
 
 
-#Set Name Folders
-
-#==========================================
-
-
-
-
-
-# Make Main Folder
-
-#==========================================
-
-
-
-
-
-
-
-#==========================================
-
-
-
-
-
-
 def page(folder="templates",page="index.html", title="Pyweb Site",background="False",background_linear_gradient="False",font_page="sans-serif",charset="UTF-8",lang="en",content="IE=edge",page_center="False"):
     try:
         shutil.rmtree(folder)
