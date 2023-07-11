@@ -39,12 +39,11 @@ By using ```page_center=``` we can specify whether all the components of the sit
 
 
 
-# print hello world
 ```
 pyweb.print(text="hello world",page="index.html",type="h1",font_size="60px",font_family="unset",color="#000",text_align="center")
 ```
 
-# start site
+
 ```
 run(browers=False,page="index.html",js_file="main.js", host='0.0.0.0',home_file="index.html",port="8080",varname='app',flask_code="")
 ```
