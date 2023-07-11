@@ -48,4 +48,54 @@ pyweb.print(text="hello world",page="index.html",type="h1",font_size="60px",font
 ```
 run(browers=False,page="index.html",js_file="main.js", host='0.0.0.0',home_file="index.html",port="8080",varname='app',flask_code="")
 ```
+
+
+
+# 
+#
+
+# JS class
 ```
+pyweb.JS.alert("It Is A Alert Message")
+pyweb.JS.alert("document.domain",var=True)
+
+pyweb.JS.console(type="log","It Is A Console Message")
+```
+# Test Project With JS class
+```
+import pyweb
+
+pyweb.page(page_center="True",title="test site",background="#222")
+
+pyweb.print("Welcom!",color="green",font_family="cursive",font_size="200px")
+pyweb.JS.alert("welcom")
+
+pyweb.button_link("Button link",link="http://www.googl.com",color="yellow")
+pyweb.print("It Is a text",font_family="cursive",color="green")
+pyweb.input(text="Enter Name",font_family="cursive",color="green",background_color="#222",id="username")
+pyweb.button("Next",font_family="cursive",onclick="login()")
+
+pyweb.JS.open_function(function_name="login",idgetlist=["username"],jscode="")
+pyweb.JS.alert("username",var="True")
+pyweb.JS.write_on_page(text=''' "Hello:"+username''',var="True")
+pyweb.JS.close()
+
+pyweb.run(browers=True)
+```
+# make miniiiii virus
+```
+import pyweb
+
+pyweb.page(page_center="True",title="test site",background="#222")
+pyweb.print("Your Hacking!",color="green",font_family="cursive",font_size="200px")
+
+pyweb.open_while("true")
+pyweb.open_url("http://www.googl.com")
+pyweb.open_url("http://www.googl.com",type="newwindow")
+pyweb.close()
+
+pyweb.run(browers=True)
+```
+
+
+# G 0 0 D   L U C K
