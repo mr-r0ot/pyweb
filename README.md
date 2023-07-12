@@ -88,10 +88,10 @@ import pyweb
 pyweb.page(page_center="True",title="test site",background="#222")
 pyweb.print("Your Hacking!",color="green",font_family="cursive",font_size="200px")
 
-pyweb.open_while("true")
-pyweb.open_url("http://www.googl.com")
-pyweb.open_url("http://www.googl.com",type="newwindow")
-pyweb.close()
+pyweb.JS.open_while("true")
+pyweb.JS.open_url("http://www.googl.com")
+pyweb.JS.open_url("http://www.googl.com",type="newwindow")
+pyweb.JS.close()
 
 pyweb.run(browers=True)
 ```
