@@ -81,6 +81,24 @@ pyweb.JS.close()
 
 pyweb.run(browers=True)
 ```
+
+
+# 
+#
+
+# PY class
+```
+import pyweb
+pyweb.page(title="Python Pyweb",install_python=True)
+pyweb.PY.run_python("""
+
+for x in range(5):
+  print("hello world",x)
+
+""")
+pyweb.run(browers=True)
+```
+
 # make miniiiii virus
 ```
 import pyweb
